@@ -16,6 +16,7 @@ function App() {
 
   const handleSwitchTenant = (ID: string) => {
     switchTenant({ tenantId: ID });
+    window.location.reload();
   };
 
   useEffect(() => {
@@ -62,7 +63,9 @@ function App() {
             <div>
               <select onChange={(e) => handleSwitchTenant(e.target.value)}>
                 {user?.tenantIds.map((ID) => (
-                  <option key={ID} value={ID}>{ID}</option>
+                  <option key={ID} value={ID}>
+                    {ID}
+                  </option>
                 ))}
               </select>
             </div>
