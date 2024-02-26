@@ -1,6 +1,11 @@
 import "./App.css";
 import { useEffect } from "react";
-import { useAuth, useLoginWithRedirect, ContextHolder, AdminPortal } from "@frontegg/react";
+import {
+  useAuth,
+  useLoginWithRedirect,
+  ContextHolder,
+  AdminPortal,
+} from "@frontegg/react";
 
 function App() {
   const { user, isAuthenticated } = useAuth();
@@ -15,6 +20,10 @@ function App() {
   const logout = () => {
     const baseUrl = ContextHolder.getContext().baseUrl;
     window.location.href = `${baseUrl}/oauth/logout?post_logout_redirect_uri=${window.location}`;
+  };
+
+  const handleClick = () => {
+    AdminPortal.show();
   };
 
   return (
@@ -37,6 +46,9 @@ function App() {
           </div>
           <div>
             <button onClick={() => logout()}>Click to logout</button>
+          </div>
+          <div>
+            <button onClick={handleClick}>Settings</button>
           </div>
         </div>
       ) : (
