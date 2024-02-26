@@ -14,8 +14,8 @@ function App() {
 
   const { switchTenant } = useAuthActions();
 
-  const handleSwitchTenant = () => {
-    switchTenant({ tenantId: "new-tenant-id" });
+  const handleSwitchTenant = (ID: string) => {
+    switchTenant({ tenantId: ID });
   };
 
   useEffect(() => {
@@ -60,9 +60,9 @@ function App() {
           <div>
             <div>Select Active Tenant</div>
             <div>
-              <select onChange={handleSwitchTenant}>
+              <select onChange={(e) => handleSwitchTenant(e.target.value)}>
                 {user?.tenantIds.map((ID) => (
-                  <option value={ID}>{ID}</option>
+                  <option key={ID} value={ID}>{ID}</option>
                 ))}
               </select>
             </div>
