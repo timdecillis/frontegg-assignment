@@ -5,11 +5,18 @@ import {
   useLoginWithRedirect,
   ContextHolder,
   AdminPortal,
+  useAuthActions,
 } from "@frontegg/react";
 
 function App() {
   const { user, isAuthenticated } = useAuth();
   const loginWithRedirect = useLoginWithRedirect();
+
+  const { switchTenant } = useAuthActions();
+
+  const handleSwitchTenant = () => {
+    switchTenant({ tenantId: "new-tenant-id" });
+  };
 
   useEffect(() => {
     if (!isAuthenticated) {
@@ -49,6 +56,9 @@ function App() {
           </div>
           <div>
             <button onClick={handleClick}>Settings</button>
+          </div>
+          <div>
+            <button onClick={handleSwitchTenant}>Select Active Tenant</button>
           </div>
         </div>
       ) : (
