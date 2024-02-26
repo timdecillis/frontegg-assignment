@@ -1,6 +1,6 @@
 import "./App.css";
 import { useEffect } from "react";
-import { useAuth, useLoginWithRedirect, ContextHolder } from "@frontegg/react";
+import { useAuth, useLoginWithRedirect, ContextHolder, AdminPortal } from "@frontegg/react";
 
 function App() {
   const { user, isAuthenticated } = useAuth();
