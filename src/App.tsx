@@ -58,7 +58,14 @@ function App() {
             <button onClick={handleClick}>Settings</button>
           </div>
           <div>
-            <button onClick={handleSwitchTenant}>Select Active Tenant</button>
+            <div>Select Active Tenant</div>
+            <div>
+              <select onChange={handleSwitchTenant}>
+                {user?.tenantIds.map((ID) => (
+                  <option value={ID}>{ID}</option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
       ) : (
