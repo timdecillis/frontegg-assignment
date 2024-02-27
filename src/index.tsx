@@ -19,7 +19,7 @@ const root = ReactDOM.createRoot(document.getElementById("root")!);
 root.render(
   <FronteggProvider
     contextOptions={contextOptions}
-    hostedLoginBox={true}
+    hostedLoginBox={false}
     authOptions={authOptions}
   >
     <App />
