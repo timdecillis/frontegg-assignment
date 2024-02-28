@@ -9,7 +9,7 @@ import {
 } from "@frontegg/react";
 
 function App() {
-  const { user, isAuthenticated } = useAuth();
+  let { user, isAuthenticated } = useAuth();
   const loginWithRedirect = useLoginWithRedirect();
 
   const { switchTenant } = useAuthActions();
@@ -26,8 +26,7 @@ function App() {
   }, [isAuthenticated, loginWithRedirect]);
 
   const logout = () => {
-    const baseUrl = ContextHolder.getContext().baseUrl;
-    window.location.href = `${baseUrl}/oauth/logout?post_logout_redirect_uri=${window.location}`;
+    window.location.href = `http://localhost:3000/account/logout`;
   };
 
   const handleClick = () => {
