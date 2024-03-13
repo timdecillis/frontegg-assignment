@@ -69,6 +69,9 @@ function App() {
               </select>
             </div>
           </div>
+          <div>
+            <button>Make API Request</button>
+          </div>
         </div>
       ) : (
         <div>
