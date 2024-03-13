@@ -50,6 +50,8 @@ function App() {
     axios
       .request(options)
       .then(function (response: any) {
+        const { name } = response.data;
+        setAPIName(name);
         console.log(response.data);
       })
       .catch(function (error: any) {
