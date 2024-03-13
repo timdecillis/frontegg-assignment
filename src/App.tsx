@@ -97,6 +97,7 @@ function App() {
           </div>
           <div>
             <button onClick={handleAPI}>Make API Request</button>
+            {APIName && <div>{APIName}</div>}
           </div>
         </div>
       ) : (
