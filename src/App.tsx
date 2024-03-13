@@ -1,4 +1,3 @@
-import "./App.css";
 import { useEffect } from "react";
 import {
   useAuth,
@@ -8,6 +7,8 @@ import {
   useAuthActions,
 } from "@frontegg/react";
 
+import "./App.css";
+const axios = require("axios");
 function App() {
   let { user, isAuthenticated } = useAuth();
   const loginWithRedirect = useLoginWithRedirect();
@@ -32,6 +33,8 @@ function App() {
   const handleClick = () => {
     AdminPortal.show();
   };
+
+  const handleAPI = () => {};
 
   return (
     <div className="App">
@@ -70,7 +73,7 @@ function App() {
             </div>
           </div>
           <div>
-            <button>Make API Request</button>
+            <button onClick={handleAPI}>Make API Request</button>
           </div>
         </div>
       ) : (
